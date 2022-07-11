@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  padding: 40px;
+  background-color: #ff99ff;
+}
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  body .container {
+    width: 600px;
+  }
+}
+@media (max-width: 375px) {
+  body {
+    padding: 30px 20px !important;
+  }
+  body .container {
+    padding: 15px !important;
+  }
+  body .container h1 {
+    text-align: center;
+  }
+  body .container form {
+    display: block !important;
+  }
+  body .container form input {
+    display: block;
+    margin-bottom: 25px;
+  }
+  body .container form input.field-task {
+    width: 100% !important;
+  }
+  body .container form input.add-task {
+    width: 100% !important;
+  }
+  body .container .content .task {
+    display: block !important;
+  }
+  body .container .content .task .task-name {
+    margin-bottom: 15px;
+  }
+  body .container .content .task .task-name p {
+    text-align: center;
+  }
+  body .container .content .task .dealing-with {
+    display: block !important;
+  }
+  body .container .content .task .dealing-with button {
+    display: block;
+    width: 100%;
+  }
+  body .container .content .task .dealing-with button.edit-task {
+    margin-bottom: 15px;
+  }
+}
+body .container {
+  padding: 30px;
+  border-radius: 6px;
+  background-color: #fff;
+}
+body .container h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  color: #330099;
+}
+body .container form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+body .container form input {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+body .container form input.field-task {
+  width: calc(100% - 100px);
+  box-shadow: 5px 5px 10px #ddd, -5px -5px 10px #ddd;
+}
+body .container form input.add-task {
+  background-color: #000099;
+  color: #fff;
+  cursor: pointer;
+}
+body .container .content .task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+body .container .content .task .task-name p {
+  font-size: 14px;
+  text-transform: capitalize;
+  color: #333;
+  font-weight: 600;
+}
+body .container .content .task .dealing-with {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .container .content .task .dealing-with button {
+  outline: none;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 10px 10px;
+  text-transform: capitalize;
+  color: #fff;
+}
+body .container .content .task .dealing-with button.edit-task {
+  background-color: #006400;
+  margin-right: 15px;
+}
+body .container .content .task .dealing-with button.delete-task {
+  background-color: #ff3333;
+}
+
+/*# sourceMappingURL=main.css.map */
