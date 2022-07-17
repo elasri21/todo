@@ -53,16 +53,17 @@ function createTask(text) {
 
     // edit the task: change its name
     editTask.addEventListener("click", function() {
-        let test = prompt("Edit the task: ");
+        let test = prompt("Edit the task: ", name.textContent);
         name.textContent = test;
     })
 
 
     // remove tasks
     deleteTask.addEventListener("click", function (e) {
-        console.log(e.target);
-        this.closest(".task").remove();
-})
+        if(confirm("Are you sure?")) {
+            this.closest(".task").remove();
+        }
+});
 
 }
 
@@ -70,8 +71,12 @@ function createTask(text) {
 form.addEventListener("submit", function(e) {
     e.preventDefault();
     let field = this.elements.task;
-    createTask(field.value);
-    field.value = "";
-    field.focus();
+    if(field.value === "") {
+        alert("Task's name is required");
+    } else {
+        createTask(field.value);
+        field.value = "";
+        field.focus();
+    }
 });
 
