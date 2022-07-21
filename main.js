@@ -1,3 +1,6 @@
+const items = {...localStorage};
+let key = Object.keys(items);
+
 // add task button
 const form = document.forms[0];
 
@@ -53,20 +56,31 @@ function createTask(text) {
 
     // edit the task: change its name
     editTask.addEventListener("click", function() {
+        let old = this.closest(".name") ? this.closest(".name").textContent : name.textContent;
         let test = prompt("Edit the task: ", name.textContent);
         name.textContent = test;
-    })
+        editStorage(old, test);
+    });
+
+    // add to local storage
 
 
+    
     // remove tasks
     deleteTask.addEventListener("click", function (e) {
         if(confirm("Are you sure?")) {
             this.closest(".task").remove();
+            remIt(name.textContent);
         }
 });
 
 }
 
+// local
+function localSt(value) {
+    let  id = Math.floor(Math.random() * 10000);
+    localStorage.setItem(`task-${id}`, value);
+}
 // add task when the form is submitted
 form.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -75,8 +89,32 @@ form.addEventListener("submit", function(e) {
         alert("Task's name is required");
     } else {
         createTask(field.value);
+        localSt(field.value);
         field.value = "";
         field.focus();
     }
 });
 
+
+function remIt(item) {
+    for(let i = 0; i < key.length; i++) {
+        if(items[key[i]] == item) {
+            localStorage.removeItem(key[i]);
+        }
+    }
+}
+function editStorage(val, item) {
+    for(let i = 0; i < key.length; i++) {
+        if(localStorage.getItem(key[i]) == val) {
+            localStorage.setItem(key[i], item);
+        }
+    }
+}
+
+function showOldTasks() {
+    key.forEach((k) => {
+        createTask(items[k])
+    });
+}
+
+window.addEventListener("load", showOldTasks);
