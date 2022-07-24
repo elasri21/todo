@@ -30,6 +30,9 @@ body {
   body .container {
     padding: 15px !important;
   }
+  body .container .date {
+    text-align: center;
+  }
   body .container h1 {
     text-align: center;
   }
@@ -70,6 +73,12 @@ body .container {
   padding: 30px;
   border-radius: 6px;
   background-color: #fff;
+}
+body .container .date {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2b0080;
+  margin-bottom: 10px;
 }
 body .container h1 {
   font-size: 30px;

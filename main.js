@@ -1,3 +1,13 @@
+// date container
+const dateContainer = document.querySelector(".date");
+let date = new Date();
+let year = date.getFullYear();
+let month = date.getMonth() + 1;
+let day = date.getDate();
+let syntax = `${day} - ${month} - ${year}`;
+dateContainer.textContent = syntax;
+//console.log(syntax);
+
 const items = {...localStorage};
 let key = Object.keys(items);
 
